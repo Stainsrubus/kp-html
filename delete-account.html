@@ -27,6 +27,7 @@
 <body>
     <div class="container">
         <h1>How to Delete My Account</h1>
+        <p>Last updated: <span id="currentDate"></span></p>
 
         <p>If you wish to delete your account with EliteKpJewellers, please follow these steps:</p>
 
@@ -50,5 +51,20 @@
         <h2>Important Notes</h2>
         <p>Deleting your account is irreversible. Once your account is deleted, you will lose access to all the benefits and savings associated with your gold chit schemes.</p>
     </div>
+
+    <script>
+        // Function to get today's date in the format YYYY-MM-DD
+        function getCurrentDate() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+            const day = String(today.getDate()).padStart(2, '0');
+
+            return `${year}-${month}-${day}`;
+        }
+
+        // Set the current date in the HTML
+        document.getElementById('currentDate').textContent = getCurrentDate();
+    </script>
 </body>
 </html>
